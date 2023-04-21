@@ -30,7 +30,9 @@ exports.getBaiHocChiTiet = catchAsync(async (req, res, next) => {
   }
   const data = await BaiHoc.findOne({
     slug: slug,
-  }).select("-__v");
+  })
+    .populate("baiHocLienQuan")
+    .select("-__v");
   const phanLoaiObject = {};
 
   return res.status(200).json({

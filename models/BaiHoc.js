@@ -58,9 +58,6 @@ BaiHocSchema.pre(/^find/, function (next) {
       },
     },
   });
-  this.populate({
-    path: "baiHocLienQuan",
-  });
 
   next();
 });
